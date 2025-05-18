@@ -50,7 +50,8 @@ int main(){
     }
     
     // Read and validate the operator
-    array<char,4> mathOps{'+', '-', '*', '/'};
+    array<char,4> mathOps{'+', '-', '*', '/'};  // or char mathOps[] = {'+', '-', '*', '/'};
+
     char op{};
     cout << "Enter operator (+, -, *, /): ";
     cin >> op;
@@ -60,7 +61,7 @@ int main(){
     for (char candidate : mathOps) {
         if (op == candidate) {
             valid_op = true;
-            break;
+            //break;
         }
     }
     if (!valid_op) {
