@@ -61,7 +61,7 @@ int main(){
     for (char candidate : mathOps) {
         if (op == candidate) {
             valid_op = true;
-            //break;
+            break;
         }
     }
     if (!valid_op) {
@@ -96,4 +96,93 @@ int main(){
     }
     
     return 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class SimpleCalc{
+    double x, y;
+    public:
+        // constructor func
+        SimpleCalc(double a, double b) : x{a}, y{b} {}
+        
+        // addition
+        double addition() const {
+            return x + y;
+        }
+        
+        // subtraction
+        double subtraction() const {
+            return x - y;
+        }
+        
+        // multiplication
+        double multiplication() const {
+            return x * y;
+        }
+        
+        // division
+        double division() const {
+            if(y == 0)
+                cerr << throw runtime-error << "Undefined... invalid entry" << "\n";
+            return x/y;
+        }
+    };
+    int main() const {
+        cout << fixed << setprecision(2);
+        double num1, num2;
+        
+        // validate two inputs
+        if(!num1) {
+            cerr << "invalid first input, try again" << "\n";
+            return 1;
+        }
+        
+        if(!num2) {
+            cerr << "invalid second input, try again" << "\n";
+            return 1;
+        }
+        
+        array<char, 4> mathOp{'+', '-', '*',  '/'};
+        char op;
+        cout << "Choose an operator ['+', '-', '*',  '/']" << "\n";
+        cin >> op;
+        
+        for(char selectedOp : mathOp){
+            if(!(op == selectedOp)) {
+                cerr << "invalid operator" << "\n";
+                return 1
+            }
+            
+SimpleCalc calcOperation{num1, num2};
+double result;
+    switch (op) {
+        case '+':
+        result = calcOperation.addition();
+        break;
+        case '-':
+        result = calcOperation.subtraction();
+        break;
+        case '*':
+        result = calcOperation.multiplication();
+        break;
+        case '/':
+        result = calcOperation.division();
+        break;
+    }
+
+        return 0;
     }
